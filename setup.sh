@@ -39,14 +39,15 @@ echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
 mysql -uroot -ppass123pass < /var/www/nextcloud/setup.sql
 
 
-if [ ! -d "/var/www/nextcloud/server/" ]; then
-    echo "++++++++++++++++++ Clone nextcloud...+++++++++++++++"
-    echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    git clone https://github.com/nextcloud/server.git /var/www/nextcloud/server/
-    git submodule update --init
-else
-    echo "++++++++++++++++++ Nextcloud already cloned.+++++++++++++++"
-fi
+# if [ ! -d "/var/www/nextcloud/server/" ]; then
+#     echo "++++++++++++++++++ Clone nextcloud...+++++++++++++++"
+#     echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
+#     git clone https://github.com/nextcloud/server.git /var/www/nextcloud/server/
+#     cd /var/www/nextcloud/server/
+#     git submodule update --init
+# else
+#     echo "++++++++++++++++++ Nextcloud already cloned.+++++++++++++++"
+# fi
 
 if [ ! -f "/etc/apache2/sites-available/nextcloud.conf" ]; then
     echo 'Alias /nextcloud "/var/www/nextcloud/server/"
